@@ -89,17 +89,17 @@ cursor = connection.cursor()
 in_pass = random.randint(1000000, 9999999)
 
 # Check for accessible databases
-'''cursor.execute("SHOW DATABASES")
+cursor.execute("SHOW DATABASES")
 for db in cursor:
-    print(db)'''
+    print(db)
 
 # Create a blank test database "test_angeion"
-'''create_database = "CREATE DATABASE test_angeion"
+create_database = "CREATE DATABASE test_angeion"
 cursor.execute(create_database)
-connection.commit()'''
+connection.commit()
 
 # Create table "table_1"
-'''create_table = """CREATE TABLE table_1 (
+create_table = """CREATE TABLE table_1 (
     id INT AUTO_INCREMENT PRIMARY KEY,
     last_name VARCHAR(255),
     first_name VARCHAR(255),
@@ -111,7 +111,7 @@ connection.commit()'''
     pay_phone VARCHAR(10)
      )"""
 cursor.execute(create_table)
-connection.commit()'''
+connection.commit()
 
 # Check table created. No duplicates
 '''check_query = "SHOW TABLES"
@@ -132,21 +132,21 @@ while index <= 9999:
 connection.commit()
 
 # Check all rows for completeness
-'''all_row_query = f"""SELECT *
+all_row_query = f"""SELECT *
                 FROM {table}"""
 cursor.execute(all_row_query)
 rows = cursor.fetchall()
 for row in rows:
-    print(row)'''
+    print(row)
 
 # If limited read
-'''all_row_query = f"""SELECT *
+all_row_query = f"""SELECT *
                 FROM {table}
                 LIMIT 300"""
 cursor.execute(all_row_query)
 rows = cursor.fetchall()
 for row in rows:
-    print(row)'''
+    print(row)
 
 # If very limited read
 count_row_query = f"""SELECT COUNT(*)
